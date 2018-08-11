@@ -3,8 +3,8 @@ using RNGPool
 import SequentialMonteCarlo.SMCModel
 using SMCExamples.FiniteFeynmanKac
 import SMCExamples.Particles.Int64Particle
-using Compat.Test
-using Compat.Random
+using Test
+using Random
 
 function Id(p::Int64Particle)
   return p.x

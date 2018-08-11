@@ -1,4 +1,3 @@
-import Compat.hasmethod
 import SequentialMonteCarlo.SMCModel
 
 # the fields of this struct are used by the SMC algorithm
@@ -29,7 +28,7 @@ function _SMCInternal{Particle, ParticleScratch}(N::Int64, n::Int64) where
   end
 
   ## assign user-defined particle scratch space
-  @assert ParticleScratch == Nothing || !isbits(ParticleScratch)
+  @assert ParticleScratch == Nothing || !isbitstype(ParticleScratch)
   particleScratch = ParticleScratch()
 
   return _SMCInternal(zetaAncs, as, lws, scratch1, scratch2, vecOnes,

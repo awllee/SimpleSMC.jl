@@ -2,7 +2,7 @@ using SimpleSMC
 import SequentialMonteCarlo.SMCModel
 using RNGPool
 using SMCExamples.FiniteFeynmanKac
-using Compat.Random
+using Random
 
 include("test.jl")
 

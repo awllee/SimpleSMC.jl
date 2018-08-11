@@ -1,5 +1,3 @@
-import Compat.copyto!
-
 @inline function _getZetas(smcio::SMCIO{Particle}, p::Int64) where Particle
   @assert 1 <= p <= smcio.n
   p == smcio.n && return smcio.zetas

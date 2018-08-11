@@ -1,5 +1,3 @@
-import Compat.undef
-
 function testSMC(model::SMCModel, N::Int64, numTrials::Int64)
   smcio = SMCIO{model.particle, model.pScratch}(N, model.maxn)
   println("Running SMC. N = $N")

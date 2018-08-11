@@ -4,8 +4,8 @@ import SequentialMonteCarlo.SMCModel
 using SMCExamples.MVLinearGaussian
 using StaticArrays
 import SMCExamples.Particles.MVFloat64Particle
-using Compat.Test
-using Compat.Random
+using Test
+using Random
 
 setRNGs(0)
 

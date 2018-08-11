@@ -2,7 +2,7 @@ using SimpleSMC
 import SequentialMonteCarlo.SMCModel
 using RNGPool
 using SMCExamples.LinearGaussian
-using Compat.Random
+using Random
 
 include("test.jl")
 
