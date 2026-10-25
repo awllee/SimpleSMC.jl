@@ -1,6 +1,5 @@
 module SimpleSMC
 
-using RNGPool
 import Statistics.mean
 using Random
 

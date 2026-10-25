@@ -1,12 +1,11 @@
 using SimpleSMC
 import SequentialMonteCarlo.SMCModel
-using RNGPool
 using SMCExamples.LinearGaussian
 using Random
 
 include("test.jl")
 
-setRNGs(0)
+Random.seed!(0)
 
 model, theta, ys, ko = LinearGaussian.defaultLGModel(10)
 println(ko.logZhats)

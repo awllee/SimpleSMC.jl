@@ -47,7 +47,7 @@ function _copyParticles!(zetaAncs::Vector{Particle}, zetas::Vector{Particle},
 end
 
 ## better not to inline ; enough work should be done in the loop
-function _mutateParticles!(zetas::Vector{Particle}, rng::RNG, p::Int64, M!::F,
+function _mutateParticles!(zetas::Vector{Particle}, rng::AbstractRNG, p::Int64, M!::F,
   zetaAncs::Vector{Particle}, pScratch::ParticleScratch) where
   {Particle, F<:Function, ParticleScratch}
   for j in eachindex(zetas)
@@ -56,7 +56,7 @@ function _mutateParticles!(zetas::Vector{Particle}, rng::RNG, p::Int64, M!::F,
 end
 
 ## better not to inline ; enough work should be done in the loop
-function _mutateParticles!(zetas::Vector{Particle}, rng::RNG, p::Int64, M!::F,
+function _mutateParticles!(zetas::Vector{Particle}, rng::AbstractRNG, p::Int64, M!::F,
   zetaAncs::Vector{Particle}, pScratch::ParticleScratch, xref::Particle) where {Particle,
   F<:Function, ParticleScratch}
   particleCopy!(zetas[1], xref)
@@ -85,7 +85,7 @@ end
   n::Int64 = smcio.n
   allAs::Vector{Vector{Int64}} = smcio.allAs
   allZetas::Vector{Vector{Particle}} = smcio.allZetas
-  k::Int64 = sampleCategorical(smcio.ws, getRNG())
+  k::Int64 = sampleCategorical(smcio.ws, Random.default_rng())
 
   @inbounds particleCopy!(path[n], allZetas[n][k])
   for p = n-1:-1:1
@@ -107,7 +107,7 @@ end
   bws::Vector{Float64} = smcio.internal.scratch1
   pScratch::ParticleScratch = smcio.internal.particleScratch
 
-  rng = getRNG()
+  rng = Random.default_rng()
   k::Int64 = sampleCategorical(smcio.ws, rng)
 
   @inbounds particleCopy!(path[n], allZetas[n][k])

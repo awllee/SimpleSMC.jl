@@ -1,5 +1,4 @@
 using SimpleSMC
-using RNGPool
 import SequentialMonteCarlo.SMCModel
 using SMCExamples.MVLinearGaussian
 using StaticArrays
@@ -7,7 +6,7 @@ import SMCExamples.Particles.MVFloat64Particle
 using Test
 using Random
 
-setRNGs(0)
+Random.seed!(0)
 
 function mvlgtest(d::Int64)
   model, theta, ys, ko = MVLinearGaussian.defaultMVLGModel(5, d)

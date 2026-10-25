@@ -1,12 +1,11 @@
 using SimpleSMC
 import SequentialMonteCarlo.SMCModel
-using RNGPool
 using SMCExamples.FiniteFeynmanKac
 using Random
 
 include("test.jl")
 
-setRNGs(0)
+Random.seed!(0)
 
 d = 3
 ffk = FiniteFeynmanKac.randomFiniteFK(d, 10)

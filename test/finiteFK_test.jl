@@ -1,5 +1,4 @@
 using SimpleSMC
-using RNGPool
 import SequentialMonteCarlo.SMCModel
 using SMCExamples.FiniteFeynmanKac
 import SMCExamples.Particles.Int64Particle
@@ -117,7 +116,7 @@ function testcsmc()
   testapproxequal(freqs, densities, 0.05, false)
 end
 
-setRNGs(0)
+Random.seed!(0)
 
 verbose = false
 

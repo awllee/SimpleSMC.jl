@@ -14,6 +14,8 @@ function testapproxequal(a::Float64, b::Float64, tol::Float64, verbose::Bool)
   @test v < tol
 end
 
+include("rng_test.jl")
+
 include("finiteFK_test.jl")
 
 @testset "MVLGModel tests" begin

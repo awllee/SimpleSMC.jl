@@ -8,7 +8,7 @@ function smc!(model::SMCModel, smcio::SMCIO{Particle}) where Particle
   lws = smcio.internal.lws
   ws = smcio.ws
   as = smcio.internal.as
-  engine = getRNG()
+  engine = Random.default_rng()
   pScratch = smcio.internal.particleScratch
 
   logZhats = smcio.logZhats
@@ -40,7 +40,7 @@ function _csmc!(model::SMCModel, smcio::SMCIO{Particle},
   lws = smcio.internal.lws
   ws = smcio.ws
   as = smcio.internal.as
-  engine = getRNG()
+  engine = Random.default_rng()
   pScratch = smcio.internal.particleScratch
 
   logZhats = smcio.logZhats
